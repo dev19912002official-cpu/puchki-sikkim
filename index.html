@@ -1,0 +1,1439 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#040914">
+
+<title>Sikkim Shor</title>
+
+<!-- =========================
+     META PIXEL
+========================= -->
+
+<script>
+!function(f,b,e,v,n,t,s)
+{
+if(f.fbq)return;
+n=f.fbq=function(){
+n.callMethod ?
+n.callMethod.apply(n,arguments) :
+n.queue.push(arguments)
+};
+
+if(!f._fbq)f._fbq=n;
+
+n.push=n;
+n.loaded=!0;
+n.version='2.0';
+n.queue=[];
+
+t=b.createElement(e);
+t.async=!0;
+t.src=v;
+
+s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}
+(window, document, 'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '3052517428290671');
+fbq('track', 'PageView');
+</script>
+
+<noscript>
+<img
+height="1"
+width="1"
+style="display:none"
+src="https://www.facebook.com/tr?id=3052517428290671&ev=PageView&noscript=1"
+/>
+</noscript>
+
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --bg:#040914;
+    --gold:#ffc400;
+    --gold2:#ffe46b;
+    --white:#fff;
+    --muted:#91a2ba;
+    --line:rgba(255,255,255,.09);
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color:white;
+
+    background:
+        radial-gradient(
+            circle at 50% -15%,
+            #173d73 0,
+            transparent 38%
+        ),
+        linear-gradient(
+            180deg,
+            #040914,
+            #07172e
+        );
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    height:76px;
+
+    padding:0 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    position:relative;
+    z-index:10;
+
+    background:rgba(3,9,20,.82);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--line);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:950;
+    letter-spacing:-1.5px;
+}
+
+.logo span{
+    color:var(--gold);
+}
+
+.logo small{
+    display:block;
+    text-align:center;
+    margin-top:3px;
+
+    color:#98a8be;
+    font-size:7px;
+    letter-spacing:5px;
+}
+
+.menu{
+    width:44px;
+    height:44px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:14px;
+
+    background:#102645;
+}
+
+.menu span{
+    width:21px;
+    height:2px;
+
+    background:white;
+    border-radius:5px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:690px;
+
+    position:relative;
+    overflow:hidden;
+
+    padding:55px 18px 45px;
+}
+
+.hero-content{
+    width:100%;
+    max-width:760px;
+
+    margin:auto;
+
+    position:relative;
+    z-index:2;
+}
+
+.glow{
+    position:absolute;
+
+    width:320px;
+    height:320px;
+
+    border-radius:50%;
+
+    filter:blur(100px);
+
+    pointer-events:none;
+}
+
+.glow-blue{
+    right:-150px;
+    top:70px;
+
+    background:#0077ff;
+    opacity:.16;
+}
+
+.glow-gold{
+    left:-180px;
+    bottom:0;
+
+    background:#ffc400;
+    opacity:.07;
+}
+
+
+/* =========================
+   BADGE
+========================= */
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:9px 14px;
+
+    border-radius:30px;
+
+    color:#ffd943;
+
+    background:rgba(255,196,0,.06);
+
+    border:1px solid rgba(255,196,0,.28);
+
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1.5px;
+}
+
+.badge i{
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#35ef77;
+
+    box-shadow:0 0 12px #35ef77;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.hero h1{
+    margin-top:26px;
+
+    font-size:clamp(55px,14vw,100px);
+
+    line-height:.86;
+
+    letter-spacing:-5px;
+
+    font-weight:950;
+}
+
+.hero h1 strong{
+    display:block;
+
+    color:var(--gold);
+
+    text-shadow:
+        0 0 30px rgba(255,196,0,.22);
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.subtitle{
+    max-width:560px;
+
+    margin-top:25px;
+
+    color:#b4c2d6;
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+
+/* =========================
+   REGISTER AREA
+========================= */
+
+.cta{
+    margin-top:35px;
+}
+
+
+/* Locked button */
+
+.register{
+    width:100%;
+    min-height:84px;
+
+    position:relative;
+    overflow:hidden;
+
+    border:none;
+    border-radius:25px;
+
+    cursor:not-allowed;
+
+    color:#061126;
+
+    font-size:clamp(25px,7vw,40px);
+
+    font-weight:950;
+
+    letter-spacing:-1px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #6d6240,
+            #92865b,
+            #6d6240
+        );
+
+    opacity:.72;
+
+    transition:.3s;
+}
+
+
+/* Unlocked */
+
+.register.ready{
+    cursor:pointer;
+
+    opacity:1;
+
+    background:
+        linear-gradient(
+            110deg,
+            #f4ad00,
+            #ffe46d,
+            #ffc000,
+            #ffe46d,
+            #f4ad00
+        );
+
+    background-size:300% 100%;
+
+    box-shadow:
+        0 15px 45px
+        rgba(255,190,0,.25),
+
+        inset
+        0 2px 0
+        rgba(255,255,255,.75);
+
+    animation:
+        goldMove 4s linear infinite,
+        buttonPulse 2.5s ease-in-out infinite;
+}
+
+.register.ready:hover{
+    transform:translateY(-4px) scale(1.01);
+}
+
+.register.ready:active{
+    transform:scale(.96);
+}
+
+.register .arrow{
+    display:inline-block;
+
+    margin-left:12px;
+
+    font-size:38px;
+}
+
+.register.ready .arrow{
+    transition:.3s;
+}
+
+.register.ready:hover .arrow{
+    transform:translateX(10px);
+}
+
+
+/* Button shine */
+
+.register.ready::after{
+    content:"";
+
+    position:absolute;
+
+    top:-100%;
+    left:-70%;
+
+    width:35%;
+    height:300%;
+
+    transform:rotate(25deg);
+
+    background:rgba(255,255,255,.42);
+
+    animation:shine 2.8s infinite;
+}
+
+
+/* =========================
+   WAIT TIMER
+========================= */
+
+.wait-text{
+    margin-top:10px;
+
+    text-align:center;
+
+    color:#8496af;
+
+    font-size:11px;
+}
+
+.wait-text strong{
+    color:var(--gold);
+}
+
+
+/* =========================
+   INVITATION
+========================= */
+
+.invite{
+    margin-top:25px;
+
+    text-align:center;
+}
+
+.invite-title{
+    margin-bottom:9px;
+
+    color:#899bb4;
+
+    font-size:11px;
+
+    letter-spacing:1px;
+}
+
+.code{
+    width:100%;
+
+    min-height:52px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:10px;
+
+    border:1px dashed
+        rgba(255,196,0,.75);
+
+    border-radius:17px;
+
+    background:
+        rgba(255,196,0,.035);
+
+    color:#ffd52b;
+
+    font-size:18px;
+
+    font-weight:900;
+
+    letter-spacing:1px;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    width:100%;
+    max-width:760px;
+
+    margin:auto;
+
+    padding:0 18px 50px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:10px;
+}
+
+.feature{
+    min-height:120px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    border:1px solid var(--line);
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.045);
+
+    backdrop-filter:blur(12px);
+
+    transition:.3s;
+}
+
+.feature:hover{
+    transform:translateY(-5px);
+
+    border-color:
+        rgba(255,196,0,.35);
+}
+
+.feature-icon{
+    width:45px;
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #17345d,
+            #0a1930
+        );
+
+    font-size:20px;
+}
+
+.feature strong{
+    margin-top:9px;
+
+    font-size:11px;
+}
+
+.feature small{
+    margin-top:4px;
+
+    color:#72859f;
+
+    font-size:9px;
+}
+
+
+/* =========================
+   GAMES
+========================= */
+
+.games{
+    padding:50px 16px 100px;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(13,37,70,.6)
+        );
+}
+
+.games-inner{
+    max-width:850px;
+    margin:auto;
+}
+
+.section-title{
+    display:flex;
+
+    align-items:flex-end;
+    justify-content:space-between;
+
+    margin-bottom:20px;
+}
+
+.section-title h2{
+    font-size:30px;
+}
+
+.section-title p{
+    margin-top:5px;
+
+    color:#7f92ac;
+
+    font-size:11px;
+}
+
+.view-all{
+    color:var(--gold);
+
+    font-size:11px;
+    font-weight:800;
+}
+
+.games-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:11px;
+}
+
+.game{
+    min-height:135px;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:20px;
+
+    border:1px solid
+        rgba(255,255,255,.1);
+
+    transition:.35s;
+}
+
+.game:hover{
+    transform:translateY(-8px);
+}
+
+.game-icon{
+    font-size:42px;
+
+    margin-bottom:10px;
+}
+
+.game strong{
+    font-size:14px;
+}
+
+.slots{
+    background:
+        linear-gradient(145deg,#6827d1,#20104d);
+}
+
+.rummy{
+    background:
+        linear-gradient(145deg,#d32d38,#58131a);
+}
+
+.crash{
+    background:
+        linear-gradient(145deg,#1268df,#09264d);
+}
+
+.fishing{
+    background:
+        linear-gradient(145deg,#0799b4,#073f55);
+}
+
+.poker{
+    background:
+        linear-gradient(145deg,#079b4d,#064523);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    padding:35px 20px;
+
+    text-align:center;
+
+    background:#030914;
+
+    border-top:1px solid var(--line);
+}
+
+.footer-logo{
+    font-size:23px;
+    font-weight:950;
+}
+
+.footer-logo span{
+    color:var(--gold);
+}
+
+.footer p{
+    margin-top:7px;
+
+    color:#687991;
+
+    font-size:8px;
+
+    letter-spacing:4px;
+}
+
+
+/* =========================
+   MOBILE STICKY BUTTON
+========================= */
+
+.mobile-register{
+    display:none;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes goldMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    100%{
+        background-position:300% 50%;
+    }
+
+}
+
+@keyframes buttonPulse{
+
+    0%,100%{
+        box-shadow:
+            0 15px 45px
+            rgba(255,190,0,.22),
+            inset 0 2px 0
+            rgba(255,255,255,.75);
+    }
+
+    50%{
+        box-shadow:
+            0 15px 65px
+            rgba(255,190,0,.42),
+            0 0 0 7px
+            rgba(255,196,0,.045),
+            inset 0 2px 0
+            rgba(255,255,255,.75);
+    }
+
+}
+
+@keyframes shine{
+
+    0%{
+        left:-70%;
+    }
+
+    45%,100%{
+        left:150%;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .header{
+        height:70px;
+        padding:0 15px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:45px 16px 35px;
+    }
+
+    .hero h1{
+        font-size:57px;
+        letter-spacing:-3.5px;
+    }
+
+    .subtitle{
+        font-size:13px;
+    }
+
+    .register{
+        min-height:78px;
+        border-radius:22px;
+        font-size:27px;
+    }
+
+    .code{
+        font-size:16px;
+    }
+
+    .features{
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:9px;
+    }
+
+    .feature{
+        min-height:105px;
+    }
+
+    .games{
+        padding-bottom:105px;
+    }
+
+    .games-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .game{
+        min-height:125px;
+    }
+
+    .game:last-child{
+        grid-column:span 2;
+    }
+
+
+    /* Mobile fixed CTA */
+
+    .mobile-register{
+        display:block;
+
+        position:fixed;
+
+        left:0;
+        right:0;
+        bottom:0;
+
+        z-index:999;
+
+        padding:9px 12px;
+
+        background:
+            rgba(3,9,20,.93);
+
+        backdrop-filter:blur(18px);
+
+        border-top:
+            1px solid
+            rgba(255,196,0,.18);
+    }
+
+    .mobile-register button{
+        width:100%;
+        height:54px;
+
+        border:none;
+        border-radius:16px;
+
+        background:
+            linear-gradient(
+                100deg,
+                #f4ad00,
+                #ffe15e,
+                #ffc000
+            );
+
+        color:#061126;
+
+        font-size:19px;
+        font-weight:950;
+
+        cursor:pointer;
+
+        box-shadow:
+            0 5px 25px
+            rgba(255,190,0,.25);
+    }
+
+    .mobile-register button:active{
+        transform:scale(.97);
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+    <div class="logo">
+        SIKKIM<span>SHOR</span>
+
+        <small>
+            PLAY • WIN • GROW
+        </small>
+    </div>
+
+    <div class="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="glow glow-blue"></div>
+    <div class="glow glow-gold"></div>
+
+
+    <div class="hero-content">
+
+        <div class="badge">
+
+            <i></i>
+
+            PREMIUM GAMING EXPERIENCE
+
+        </div>
+
+
+        <h1>
+
+            PLAY BIG
+
+            <strong>
+                WIN BIGGER
+            </strong>
+
+        </h1>
+
+
+        <p class="subtitle">
+
+            A modern, fast and mobile-first gaming
+            experience designed for a smooth journey.
+
+        </p>
+
+
+        <!-- REGISTER -->
+
+        <div class="cta">
+
+            <button
+                class="register"
+                id="registerBtn"
+                disabled
+            >
+
+                <span id="buttonText">
+                    WAIT 3 SEC
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <div class="wait-text" id="waitText">
+                Please wait
+                <strong>3 seconds</strong>
+                to continue
+            </div>
+
+        </div>
+
+
+        <!-- INVITATION -->
+
+        <div class="invite">
+
+            <div class="invite-title">
+                INVITATION CODE
+            </div>
+
+            <div class="code">
+                23542284412646
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="features">
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            ⚡
+        </div>
+
+        <strong>
+            Instant
+        </strong>
+
+        <small>
+            Registration
+        </small>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            🛡️
+        </div>
+
+        <strong>
+            Secure
+        </strong>
+
+        <small>
+            Account
+        </small>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            💳
+        </div>
+
+        <strong>
+            Fast
+        </strong>
+
+        <small>
+            Transactions
+        </small>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            🎧
+        </div>
+
+        <strong>
+            24/7
+        </strong>
+
+        <small>
+            Support
+        </small>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     GAMES
+========================= -->
+
+<section class="games">
+
+    <div class="games-inner">
+
+        <div class="section-title">
+
+            <div>
+
+                <h2>
+                    Popular Games
+                </h2>
+
+                <p>
+                    Choose your favourite game
+                </p>
+
+            </div>
+
+            <div class="view-all">
+                VIEW ALL →
+            </div>
+
+        </div>
+
+
+        <div class="games-grid">
+
+            <div class="game slots">
+
+                <div class="game-icon">
+                    🎰
+                </div>
+
+                <strong>
+                    Slots
+                </strong>
+
+            </div>
+
+
+            <div class="game rummy">
+
+                <div class="game-icon">
+                    🃏
+                </div>
+
+                <strong>
+                    Rummy
+                </strong>
+
+            </div>
+
+
+            <div class="game crash">
+
+                <div class="game-icon">
+                    🎲
+                </div>
+
+                <strong>
+                    Crash
+                </strong>
+
+            </div>
+
+
+            <div class="game fishing">
+
+                <div class="game-icon">
+                    🐟
+                </div>
+
+                <strong>
+                    Fishing
+                </strong>
+
+            </div>
+
+
+            <div class="game poker">
+
+                <div class="game-icon">
+                    ♠
+                </div>
+
+                <strong>
+                    Poker
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="footer-logo">
+        SIKKIM<span>SHOR</span>
+    </div>
+
+    <p>
+        PLAY • WIN • GROW
+    </p>
+
+</footer>
+
+
+
+<!-- =========================
+     MOBILE REGISTER
+========================= -->
+
+<div class="mobile-register">
+
+    <button id="mobileRegister">
+
+        REGISTER NOW
+        <span>→</span>
+
+    </button>
+
+</div>
+
+
+
+<script>
+
+/* =========================================
+   CONFIG
+========================================= */
+
+const REGISTRATION_URL =
+"https://sikkimgames.online/#/register?invitationCode=23542284412646";
+
+
+const WAIT_SECONDS = 3;
+
+
+/* =========================================
+   ELEMENTS
+========================================= */
+
+const registerBtn =
+    document.getElementById(
+        "registerBtn"
+    );
+
+const mobileRegister =
+    document.getElementById(
+        "mobileRegister"
+    );
+
+const buttonText =
+    document.getElementById(
+        "buttonText"
+    );
+
+const waitText =
+    document.getElementById(
+        "waitText"
+    );
+
+
+/* =========================================
+   SIMPLE HUMAN INTERACTION STATE
+
+   The button stays locked initially.
+   It becomes available after 3 seconds.
+
+   This is basic UX / anti-accidental-click
+   protection, not ad-platform cloaking.
+========================================= */
+
+let buttonUnlocked = false;
+
+let secondsLeft =
+    WAIT_SECONDS;
+
+
+const timer =
+    setInterval(function(){
+
+        secondsLeft--;
+
+        if(secondsLeft > 0){
+
+            buttonText.textContent =
+                "WAIT " +
+                secondsLeft +
+                " SEC";
+
+            waitText.innerHTML =
+                "Please wait <strong>" +
+                secondsLeft +
+                " seconds</strong> to continue";
+
+        }
+
+
+        if(secondsLeft <= 0){
+
+            clearInterval(timer);
+
+            buttonUnlocked = true;
+
+            registerBtn.disabled = false;
+
+            registerBtn.classList.add(
+                "ready"
+            );
+
+            buttonText.textContent =
+                "REGISTRATION";
+
+            waitText.innerHTML =
+                "Ready — tap to continue";
+
+        }
+
+    },1000);
+
+
+/* =========================================
+   LEAD EVENT + REGISTRATION
+========================================= */
+
+function goToRegistration(){
+
+    if(!buttonUnlocked){
+        return;
+    }
+
+
+    /*
+      Meta Pixel Lead event fires only
+      after the user actually clicks.
+    */
+
+    if(typeof fbq === "function"){
+
+        fbq(
+            "track",
+            "Lead"
+        );
+
+    }
+
+
+    /*
+      Small delay gives the browser a moment
+      to send the pixel request.
+    */
+
+    setTimeout(function(){
+
+        window.location.href =
+            REGISTRATION_URL;
+
+    },150);
+
+}
+
+
+/* Main button */
+
+registerBtn.addEventListener(
+    "click",
+    goToRegistration
+);
+
+
+/* Mobile sticky button */
+
+mobileRegister.addEventListener(
+    "click",
+    goToRegistration
+);
+
+
+/* =========================================
+   MOBILE BUTTON VISUAL STATE
+========================================= */
+
+function updateMobileButton(){
+
+    if(buttonUnlocked){
+
+        mobileRegister.innerHTML =
+            "REGISTER NOW <span>→</span>";
+
+    }else{
+
+        mobileRegister.innerHTML =
+            "WAIT " +
+            secondsLeft +
+            " SEC";
+
+    }
+
+}
+
+setInterval(
+    updateMobileButton,
+    500
+);
+
+</script>
+
+</body>
+</html>
+```
